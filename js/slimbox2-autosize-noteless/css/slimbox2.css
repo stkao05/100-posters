@@ -1,0 +1,151 @@
+/* SLIMBOX */
+
+#lbOverlay {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#lbCenter {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+#lbCenter, #lbBottomContainer {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+}
+
+
+.lbLoading {
+	background: #fff url(loading.gif) no-repeat center;
+}
+
+#lbImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*border: 10px solid #fff;*/
+	background-repeat: no-repeat;
+}
+
+#lbSlide{
+	display: block;
+	position: absolute;
+	width: 100%;
+}
+
+
+
+#lbPrevLink, #lbNextLink {
+	display: inline-block;
+	z-index: 9999;
+
+	color: rgba(255, 255, 255, .6);
+	text-decoration: none;
+	font-size: 20px;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+
+	line-height: 25px;
+
+	float:left;
+
+	/*
+	height: 28px;
+	width: 28px;
+	background: url(pre.png);
+	outline: none;
+	font-size: 100000px;  ( Workaround needed for IE )
+	overflow: hidden;     ( Workaround needed for IE )
+	*/
+}
+
+#lbPrevLink:hover, #lbNextLink:hover {
+	color: white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, .2);
+	border-color: transparent;
+
+}
+
+#lbPrevLink {
+	margin-right: 3px;
+}
+
+#lbPrevLink:hover {
+	/*background: transparent url(prevlabel.gif) no-repeat 0 15%;*/
+}
+
+#lbNextLink {
+	left: 40px;
+	margin-right: 10px;
+}
+
+#lbNextLink:hover {
+	/*background: transparent url(nextlabel.gif) no-repeat 100% 15%;*/
+}
+
+
+#lbBottom {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: white;
+	line-height: 1.4em;
+	text-align: left;
+	/*
+	border: 10px solid #fff;
+	border-top-style: none;
+	*/
+}
+
+#lbCloseLink {
+	display: block;
+	float: right;
+	width: 25px;
+	height: 25px;
+	
+	font-size: 22px;
+	line-height: 25px;
+	text-decoration: none;
+	text-align: center;
+
+	color: rgba(255, 255, 255, .6);
+	outline: none;
+}
+#lbCloseLink:hover {
+	color: white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, .2);
+	border-color: transparent;
+}
+
+#lbNumber {
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	height: 25px;
+}
+
+#lbCaption, #lbNumber {
+	margin-right: 71px;
+	display: inline-block;
+}
+
+#lbCaption {
+	font-weight: bold;
+	display: none;
+}

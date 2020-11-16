@@ -1,0 +1,614 @@
+@charset "UTF-8";
+
+/*
+ * Author: Steven Kao 
+ */
+ 
+/* ---------------------------------- */
+
+/*
+ *  TABLE OF CONTENTS
+ *  
+ *  font-face
+ *  General Style
+ *  Navigation
+ *  Main Container
+ *  Work List 
+ *  	What's New
+ *  	Work List Item
+ *  Description Page
+ *  	About Page
+ *  	Report Page
+ *  Widgets/Others
+ *  	PageScroll
+ *  	Slimbox
+ *  	P.I.E Float Clearing
+ */
+ 
+/* ---------------------------------- */
+
+
+/* font-face */
+
+@font-face {
+    font-family: 'EBGaramondRegular';
+    src: url('../font/eb-garamond/EBGaramond-webfont.eot');
+    src: url('../font/eb-garamond/EBGaramond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/eb-garamond/EBGaramond-webfont.woff') format('woff'),
+         url('../font/eb-garamond/EBGaramond-webfont.ttf') format('truetype'),
+         url('../font/eb-garamond/EBGaramond-webfont.svg#EBGaramondRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'VollkornRegular';
+    src: url('../font/vollkorn/Vollkorn-Regular-webfont.eot');
+    src: url('../font/vollkorn/Vollkorn-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/vollkorn/Vollkorn-Regular-webfont.woff') format('woff'),
+         url('../font/vollkorn/Vollkorn-Regular-webfont.ttf') format('truetype'),
+         url('../font/vollkorn/Vollkorn-Regular-webfont.svg#VollkornRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* ---------------------------------- */
+
+
+/* General Sytle */
+*:lang(zh) {
+	font-family: "儷黑 Pro", "微軟正黑體", "黑體", sans-serif;
+}
+
+html {
+}
+
+body {
+	font-family: "EBGaramondRegular", serif;
+	overflow-y: scroll;
+}
+
+h4 {
+	font-weight: normal;
+}
+
+pre {
+	margin: 0;
+	font-family: 'EBGaramondRegular'; 
+}
+
+#pageContainer {
+	padding-top: 70px;
+}
+
+
+/* ---------------------------------- */
+
+/* Navigation */
+#nav {
+	width: 400px;
+	position: fixed;
+	top: 5px;
+	right: 30px;
+	font-size: 17px;
+	color: #808080;
+	z-index: 10;  /* prevent work item blocking the user from clicking nav*/
+}
+
+#nav ul {
+	margin-bottom: 10px;
+}
+
+#nav ul ul {
+ 	overflow: hidden;
+}
+
+#nav ul ul li {
+	position: relative;
+}
+
+#nav li{
+	float:right;
+	margin-left:20px;
+	cursor: pointer; 
+}
+
+#nav li a {
+	text-decoration: none;
+	color: #808080;
+}
+
+#nav li a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+#nav li a.activated {
+	color: #000000;
+} 
+
+#nav li input[type='button']{
+	width: 17px;
+	height: 17px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: url(../img/menu.png) no-repeat center top;
+	text-indent: -1000em;
+}
+
+#nav p {
+	position: absolute;
+	right: 0;
+	background-color: white;
+	text-align: right;
+	margin: 0;
+	display:none;
+	font-size: 16px;
+	z-index: 999;
+}
+
+#nav p span {
+	color: #000000;
+	padding-right: 7px;
+}
+
+#nav p a, #nav p a:active {
+	text-decoration: none;
+	color: #808080;
+}
+
+
+#nav p a:hover {
+	text-decoration: underline;
+}
+
+
+#nav a.facebookFanpageIcon{
+       	position: absolute; 
+	right: 1px;
+	display: block;
+	width: 13px;
+	height: 13px;
+	background: url(../img/fb1.png);
+	-moz-transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
+	transition: 0.3s ease-in;
+}
+
+#nav a.facebookFanpageIcon:hover{
+	background: url(../img/fb2.png);
+	-moz-transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
+	transition: 0.3s ease-in;
+}
+
+
+/* ---------------------------------- */
+
+/* Main Container */
+#main {
+	width: 1020px;
+	margin: 0 auto;
+	padding: 70px 120px 0 120px;
+}
+
+
+#main h1 a{
+	display:block;
+	width: 237px;
+	height: 49px;
+	text-indent: -999999px;
+	background: url(../img/logo2.png);
+
+	-moz-transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
+	transition: 0.3s ease-in;
+}
+
+#main h1 a:hover, #main h1 a.homePageMode{
+	background: url(../img/logo1.png);
+	
+	-moz-transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-o-transition: 0.3s ease-in;
+	transition: 0.3s ease-in;
+}
+
+
+#main .layoutAdjuster {
+	position: relative;
+	padding-left: 70px;
+}
+
+
+#main .pageLabel {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: -999999px;
+	margin-left: -12px;
+	margin-top: 3px;
+}
+
+#main #aboutPageLabel {
+	width: 70px;
+	height: 18px;
+	background: url(../img/aboutLabel.png);
+}
+
+#main #reportPageLabel {
+	width: 62px;
+	height: 18px;
+	background: url(../img/editReportLabel.png);
+}
+ 
+
+
+/* ---------------------------------- */
+
+
+/* Work list */
+#works {
+	display:none;
+	padding-bottom: 70px;
+}
+
+
+/* What's New */
+#works h5 a[href]{
+	color: #4D4D4D;
+	font-family: "VollkornRegular";
+	font-size: 17px;
+	font-weight: normal;
+}
+
+#works h5 .whatnew {
+	font-size: 21px;
+}
+
+#works h5 .year {
+	margin-left: -96px;
+	font-weight: normal;
+}
+
+#works h5 .date, #works h5 .oldIndex {
+	font-size: 19px;
+}
+
+#works h5 .oldIndex {
+	position: relative;
+}
+
+#works .crossLineOverlap{
+	position: absolute;
+	background: url(../img/crossline.jpg) repeat-x 0px 18px;
+	display:inline-block;
+	width: 100%;
+	text-indent: -9999px;
+	padding: 0 1px;
+}
+
+#works h5 .date span{
+	font-size: 13px;
+}
+
+#works h5 span:lang(zh){
+	font-size: 13px;
+}
+
+#works h5 a.series {
+	display: inline-block;
+	width: 17px;
+	height: 100%;
+	text-indent: -10000000px;
+	margin: 0 8px;
+	background: url(../img/series.png) no-repeat 0 50%;
+}
+
+#works h5 a.series:hover {
+	background: url(../img/series2.png) no-repeat 0 50%;
+}
+
+#works h5:before {
+	content: ".";
+	text-indent: -10000000px;
+	background: url(../img/brace1.png) no-repeat 0 50%;
+	display: inline-block;
+	width: 11px;
+	height: 100%;
+}
+
+#works h5:after {
+	content: ".";
+	text-indent: -10000000px;
+	background: url(../img/brace2.png) no-repeat 0 50%;
+	display: inline-block;
+	width: 11px;
+	height: 100%;
+}
+     
+/* ---------------------------------- */
+
+
+
+
+/* Work List Item */
+
+#works h6 {
+	color: #000000;
+	font-family: "VollkornRegular";
+	font-size: 17px;
+	font-weight: normal;
+	position: relative;
+}
+
+#works h6 span:lang(zh) {
+	font-size: 15px;
+}
+
+#works h6 .close {
+	position: absolute;
+	margin-left: -65px;
+	display: inline-block;
+	width: 11px;
+	height: 100%;
+	background: url(../img/close.png) no-repeat 0 50%;
+}
+
+#works h6:before {
+	content: ".";
+	text-indent: -10000000px;
+	background: url(../img/series2.png) no-repeat 0 50%;
+	display: inline-block;
+	width: 17px;
+	height: 100%;
+	margin-right: 13px;
+}
+
+
+
+.works {
+	margin: 0;
+}
+
+.works li {
+	color: #808080;
+	font-size: 20px;
+	cursor: pointer;
+	line-height: 34px;
+	-moz-transition: color 0.3s ease-in;
+	-webkit-transition: color 0.3s ease-in;
+	-o-transition: color 0.3s ease-in;
+	transition: color 0.3s ease-in;
+}
+
+.works li a[href] {
+	display: inline;
+	background: transparent;
+	color: #808080;
+	text-decoration: none;
+    white-space: nowrap;
+}
+
+.works li a[href]:hover {
+	color: #000000;
+}
+
+.works li:hover {
+	color: #000000;
+	-moz-transition: color 0.1s;
+	-webkit-transition: color 0.1s;
+	-o-transition: color 0.1s;
+	transition: color 0.1s;
+}
+
+.works li.seriesMode {
+ 	z-index: 600;
+}
+
+.works li.seriesMode a[href]{
+	color: #000000;
+}
+
+.works li.seriesMode a[href]:hover { 
+	text-decoration: underline;
+}
+ 
+.works li.seriesMode a.series {
+	display: none;
+}                    
+
+
+.works li.seriesMode .year {
+	color: #000000;	
+	-moz-transition: color 1.2s;
+	-webkit-transition: color 1.2s;
+	-o-transition: color 1.2s;
+	transition: color 1.2s;
+}
+
+
+
+.works li a.series {
+	display: inline-block;
+	width: 17px;
+	height: 100%;
+    color: transparent;
+	background: url(../img/series.png) no-repeat 0 50%;
+}
+
+.works li a.series:hover {
+	background: url(../img/series2.png) no-repeat 0 50%;
+}
+
+.works .index {
+	width: 25px;
+	display: inline-block;
+}
+
+.works li span:lang(zh){
+	font-size: 15px;
+}
+
+.works .info {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.works .year {
+	position: absolute;
+	margin-left: -81px;
+	font-size: 21px;
+	color: #ffffff;
+	-moz-transition: color 0.3s ease-in;
+	-webkit-transition: color 0.3s ease-in;
+	-o-transition: color 0.3s ease-in;
+	transition: color 0.3s ease-in;
+}
+
+.works .year.selected {
+	color: #000000;	
+	-moz-transition: color 1.2s;
+	-webkit-transition: color 1.2s;
+	-o-transition: color 1.2s;
+	transition: color 1.2s;
+}
+
+/* ---------------------------------- */
+
+
+/* ---------------------------------- */
+
+/* Description Page */
+
+.descriptionPage {
+	display: none;
+	padding-bottom: 200px;
+}
+                        
+.descriptionPage h1 { 
+	font-size: 20px;
+}
+
+.descriptionPage p:lang(zh) {
+	line-height: 1.5em;
+	font-size: 15px;
+}
+
+.descriptionPage p {
+	font-size: 16px;
+}                       
+
+
+.descriptionPage pre:lang(zh) {
+	line-height: 1.5em;
+	font-size: 15px;
+}
+
+.descriptionPage pre {
+	font-size: 16px;
+}                       
+/* About Page */
+#pageContainer #about h1 {
+
+}
+
+/* ---------------------------------- */
+
+ 
+/* Explain Page */
+
+#report img[alt=subjectPackageIcon]{
+	position: absolute;
+	margin-left: -146px;
+
+}
+
+
+
+/* ---------------------------------- */
+
+
+/* ---------------------------------- */
+    
+
+
+/* Widgets/Others */
+
+/* PageScroll */
+.pageScroll {
+	position: fixed;
+	right: 30px;
+	bottom: 0px;
+}
+
+.pageScroll li {
+	margin-bottom: 20px;
+}
+
+
+.pageScroll li a{
+	text-indent: -2000000px;
+	display: block;	
+	width: 18px;
+	height: 18px;
+	background: url(../img/scroll1.png); 
+}
+
+.pageScroll li a:hover, .pageScroll li.active a {
+	background: url(../img/scroll2.png);   
+}
+
+  
+.pageScroll li.active a {
+	margin-left: 10px;
+	margin-right: -10px;
+
+ 	-moz-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;       
+}
+/* ---------------------------------- */
+
+
+
+/* Slimbox */
+.theaterMode body{
+	overflow: hidden;
+	margin-right: 17px;
+}
+
+
+.theaterMode #nav {
+	right: 47px;
+}
+
+.theaterMode .pageScroll {
+	right: 47px; 
+}
+
+
+/* ---------------------------------- */
+
+/* P.I.E Float Clearing */
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  display: block;
+}
+
+.clearfix {display: inline-block;}
+.clearfix {display: block;}
+		
+/* ---------------------------------- */

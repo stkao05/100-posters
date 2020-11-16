@@ -1,0 +1,187 @@
+/* SLIMBOX */
+
+#lbOverlay {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#lbCenter {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+#lbBottomContainer {
+	position: absolute;
+	z-index: 9999;
+	/*overflow: hidden;*/
+}
+
+.lbLoading {
+	background: #fff url(loading.gif) no-repeat center;
+}
+
+#lbImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	/*border: 10px solid #fff;*/
+	background-repeat: no-repeat;
+}
+
+#lbSlide{
+	display: block;
+	/*position: absolute;*/
+	width: 100%;
+}
+
+#lbPrevLink, #lbNextLink {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	margin-bottom: -30px;
+
+	color: #C0C0C0;
+	text-decoration: none;
+	font-size: 20px;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+
+	/*
+	height: 28px;
+	width: 28px;
+	background: url(pre.png);
+	outline: none;
+	font-size: 100000px;  ( Workaround needed for IE )
+	overflow: hidden;     ( Workaround needed for IE )
+	*/
+}
+
+#lbPrevLink:hover, #lbNextLink:hover {
+	color: white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, .2);
+	border-color: transparent;
+
+}
+
+#lbPrevLink {
+	left: 0;
+}
+
+#lbPrevLink:hover {
+	/*background: transparent url(prevlabel.gif) no-repeat 0 15%;*/
+}
+
+#lbNextLink {
+	left: 40px;
+}
+
+#lbNextLink:hover {
+	/*background: transparent url(nextlabel.gif) no-repeat 100% 15%;*/
+}
+
+#lbNumber {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+        position: absolute;
+	bottom: 0;
+	left: 80px;
+	display: block;
+	height: 25px;
+	text-align: center;
+	margin-bottom: -31px;
+	font-size: 13px;
+
+}
+
+#lbBottom {
+	/*
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 1.4em;
+	text-align: left;
+	border: 10px solid #fff;
+	border-top-style: none;
+	*/
+
+	font-family: "VollkornRegular", serif
+	font-size: 19px;
+	color: #fff;
+	line-height: 1.2em;
+	text-align: left;
+	padding: 3px 7px 7px 10px;
+	background-color: black;
+
+
+}
+
+#lbCloseLink {
+	display: block;
+	width: 27px;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 22px;
+	line-height: 25px;
+
+	margin-top: 5px;
+	/*background: transparent url(closelabel.gif) no-repeat center;*/
+	outline: none;
+
+
+	position: absolute;
+	z-index: 9999;
+	color: #C0C0C0;
+	/*
+	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	*/
+
+}
+#lbCloseLink:hover {
+	color: white;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, .2);
+	border-color: transparent;
+}
+
+#lbCaption, #lbNumber {
+	/*margin-right: 71px;*/
+}
+
+#lbCaption {
+	display: none;
+}
+
+#lbCaption span {
+	margin-right: 10px;
+}
+
+#lbCaption span:lang(ch) {
+	font-size: 15px;
+}
+
+#lbDescription {
+
+	font-family: "儷黑 Pro", "微軟正黑體", "黑體", sans-serif;
+	font-size: 11px;
+	margin-top: 5px;
+
+}
+
